@@ -10,4 +10,4 @@ def run():
         img = Image.open(image)
         st.image(img, width=350)
         txt = pytesseract.image_to_string(img, lang="eng")
-        st.write(txt)
+        st.code(txt, language="plain")
