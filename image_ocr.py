@@ -11,6 +11,3 @@ def run():
         st.image(img, width=350)
         txt = pytesseract.image_to_string(img, lang="eng")
         st.write(txt)
-        st.write(type(txt))
-        st.write(len(txt))
-        st.write(" ".join(txt.split("\n")))
