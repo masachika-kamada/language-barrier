@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 import pytesseract
+import os
 
 
 def run():
@@ -11,3 +12,5 @@ def run():
         st.image(img, width=350)
         txt = pytesseract.image_to_string(img, lang="eng")
         st.code(" ".join(txt.split("\n")), language="plain")
+        os.remove(image)
+        img = Image.open(image)
